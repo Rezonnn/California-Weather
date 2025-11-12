@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>California Weather • Live Forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo-dot"></span>
+        <span class="brand-text">California Weather</span>
+      </div>
+
+      <div class="controls">
+        <div class="city-selector">
+          <input
+            type="text"
+            id="city-search"
+            placeholder="Search California city..."
+          />
+          <select id="city-select"></select>
+        </div>
+
+        <button id="unit-toggle" class="unit-toggle" aria-label="Toggle °C / °F">
+          °C
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Current conditions -->
+      <section class="panel current-panel glass">
+        <div class="current-top">
+          <div>
+            <div class="current-location" id="current-location">Loading...</div>
+            <div class="current-description" id="current-description"></div>
+            <div class="current-updated" id="current-updated"></div>
+          </div>
+          <div class="current-temp">
+            <span id="current-temp">--</span>
+            <span class="current-unit">°</span>
+          </div>
+        </div>
+
+        <div class="current-extra">
+          <div class="current-icon-block">
+            <div id="current-icon" class="weather-icon">☁️</div>
+          </div>
+          <div class="current-metrics">
+            <div class="metric-row">
+              <span>Feels like</span>
+              <span id="current-feels">--</span>
+            </div>
+            <div class="metric-row">
+              <span>High / Low</span>
+              <span id="current-high-low">--</span>
+            </div>
+            <div class="metric-row">
+              <span>Humidity</span>
+              <span id="current-humidity">--</span>
+            </div>
+            <div class="metric-row">
+              <span>Wind</span>
+              <span id="current-wind">--</span>
+            </div>
+            <div class="metric-row">
+              <span>UV Index</span>
+              <span id="current-uv">--</span>
+            </div>
+            <div class="metric-row">
+              <span>Sunrise / Sunset</span>
+              <span id="current-sunrise-sunset">--</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hourly forecast -->
+      <section class="panel glass">
+        <h2>Hourly Forecast</h2>
+        <div class="hourly-strip" id="hourly-strip">
+          <!-- Hour cards injected here -->
+        </div>
+      </section>
+
+      <!-- Daily forecast -->
+      <section class="panel glass">
+        <h2>7-Day Forecast</h2>
+        <div class="daily-grid" id="daily-grid">
+          <!-- Day cards injected here -->
+        </div>
+      </section>
+
+      <!-- Details panel (updates based on selection) -->
+      <section class="panel glass">
+        <h2>Details</h2>
+        <div id="details" class="details-body">
+          Select an hour or day to see more details.
+        </div>
+      </section>
+
+      <!-- Error bar -->
+      <div id="error-bar" class="error-bar hidden"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
